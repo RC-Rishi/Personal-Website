@@ -2,6 +2,8 @@
 
 A local workspace for collecting reference-inspired components before assembling a personal website. Its styling is a temporary lab theme.
 
+[Open the live component lab](https://personal-website-peach-omega-49.vercel.app)
+
 ## Collected components
 
 - **Leather Background** — cream pebble and dark leather finishes from JJettas, with responsive texture sizes and desktop pointer lighting. Open `/?component=leather-background`, use the Cream/Dark controls, and hide the sample labels to inspect the material. Open **Colors** for the preset slider, pebble/crevice color pickers, hex values, and reset. Palette choices persist until the preview reloads. The reusable component lives in `src/components/leather-background/`; inspection notes are in `references/jjettas-leather.md`.
