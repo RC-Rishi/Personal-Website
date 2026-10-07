@@ -1,0 +1,50 @@
+.preloader-demo { position: relative; height: 100svh; min-height: 320px; overflow: hidden; background: #8bbdb8; }
+.preloader-lab-controls { position: absolute; z-index: 30; left: 0; right: 0; top: 0; display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 26px 32px; color: #183631; pointer-events: none; }
+.preloader-lab-label { font: 9px/1.5 ui-monospace, monospace; letter-spacing: 1.8px; opacity: .7; }
+.preloader-lab-controls > div { display: flex; gap: 7px; pointer-events: auto; }
+.preloader-lab-controls button, .preloader-lab-controls summary { display: block; background: #e9fff11c; border: 1px solid #15372f30; color: inherit; border-radius: 24px; padding: 11px 15px; min-height: 44px; font: 11px/20px Arial, sans-serif; cursor: pointer; }
+.preloader-lab-controls :is(button, summary):hover { background: #e9fff136; }
+.preloader-demo:has(.sharing-preloader:is([data-phase='awakening'], [data-phase='ready'])) .preloader-lab-controls :is(button, summary) { background: #bfd8d1; }
+.preloader-lab-controls :is(button, summary, select):focus-visible { outline: 2px solid currentColor; outline-offset: 3px; }
+.preloader-lab-controls summary { list-style: none; }
+.preloader-lab-controls summary::-webkit-details-marker { display: none; }
+.preloader-lab-controls :is(button, summary) span { margin-left: 12px; }
+.preloader-lab-controls details { position: relative; }
+.preloader-settings-panel { position: absolute; right: 0; top: 54px; width: min(320px, calc(100vw - 40px)); max-height: calc(100svh - 110px); overflow-y: auto; overscroll-behavior: contain; padding: 22px; background: #d1e8e1; border: 1px solid #31554d30; border-radius: 14px; box-shadow: 0 12px 40px #13352c16; }
+.preloader-settings-panel label { display: block; font: 12px/1.5 Arial, sans-serif; margin-bottom: 18px; }
+.preloader-settings-panel select { display: block; margin-top: 7px; width: 100%; min-height: 44px; font: inherit; color: #183631; background: #e6f4ed; padding: 10px; border: 1px solid #47615c66; border-radius: 6px; }
+.preloader-settings-panel p { font: 11px/1.7 Arial, sans-serif; margin: 0; opacity: .75; }
+.preloader-appearance { border: 0; border-top: 1px solid #31554d30; padding: 18px 0 0; margin: 24px 0 0; }
+.preloader-appearance legend { padding-right: 12px; font: 14px/1.5 Georgia, serif; }
+.preloader-color-field { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-bottom: 12px; font: 12px/1.5 Arial, sans-serif; }
+.preloader-color-field > div { display: flex; gap: 6px; }
+.preloader-color-field input { min-height: 44px; padding: 7px; border: 1px solid #47615c66; border-radius: 6px; background: #e6f4ed; color: #183631; }
+.preloader-color-field input[type='color'] { width: 44px; cursor: pointer; }
+.preloader-color-field input[type='text'] { width: 87px; font: 12px/1.5 ui-monospace, monospace; }
+.preloader-color-field input[aria-invalid='true'] { border-color: #983427; }
+.preloader-settings-panel .preloader-matte { display: flex; flex-wrap: wrap; gap: 5px; justify-content: space-between; margin-top: 20px; }
+.preloader-matte input { width: 100%; min-height: 44px; accent-color: #31554d; }
+.preloader-lab-controls .preloader-appearance button { background: transparent; padding: 8px 12px; }
+.preloader-settings-panel input:focus-visible { outline: 2px solid #183631; outline-offset: 3px; }
+.preloader-simulation-label { position: absolute; left: 0; right: 0; bottom: 24px; z-index: 25; text-align: center; font: 9px/1.5 ui-monospace, monospace; letter-spacing: 1.4px; color: #183631; }
+.preloader-destination { position: absolute; inset: 0; }
+.preloader-destination[data-fallback='true'] .leather-background__material { display: none; }
+.preloader-landing { height: 100%; min-height: 100%; color: #eeeade; }
+.preloader-landing > .leather-background__content { height: 100%; display: flex; flex-direction: column; }
+.preloader-landing header, .preloader-landing footer { display: flex; justify-content: space-between; gap: 20px; padding: 32px 38px; font: 9px/1.5 ui-monospace, monospace; letter-spacing: 1.6px; opacity: .65; }
+.preloader-landing header { padding-top: 105px; }
+.preloader-landing main { padding: 20px 10%; margin: auto 0; }
+.preloader-landing-kicker { font: 10px/1.5 ui-monospace, monospace; letter-spacing: 2px; }
+.preloader-landing h1 { font: 500 clamp(38px, 6vw, 80px)/1.08 Arial,sans-serif; letter-spacing: -2px; margin: 22px 0; }
+.preloader-landing h1 em { font-family: Georgia,serif; font-weight: 400; }
+.preloader-landing h1:focus { outline: none; }
+.preloader-landing main > p { font: 13px/1.9 Arial,sans-serif; opacity: .66; }
+.preloader-landing main > a { display: inline-flex; gap: 30px; margin-top: 24px; font: 12px/1.5 Arial,sans-serif; text-decoration: none; border-bottom: 1px solid #eeeade60; padding-bottom: 10px; }
+.preloader-demo:has(.preloader-destination[data-entered='true']) .preloader-lab-controls { color: #eeeade; }
+.preloader-demo:has(.preloader-destination[data-entered='true']) .preloader-lab-controls :is(button, summary) { border-color: #eeeade40; }
+.preloader-demo:has(.preloader-destination[data-entered='true']) .preloader-settings-panel { color: #183631; }
+.preloader-demo:has(.preloader-destination[data-entered='true']) .preloader-simulation-label { display: none; }
+.preloader-demo:has([data-phase='exiting']) :is(.preloader-lab-controls, .preloader-simulation-label) { opacity: 0; pointer-events: none; }
+.preloader-demo:has([data-phase='exiting']) .preloader-lab-controls > div { pointer-events: none; }
+@media(max-width:600px) { .preloader-lab-controls { padding: 20px; } .preloader-lab-label { display: none; } .preloader-lab-controls > div { margin-left: auto; } .preloader-landing header, .preloader-landing footer { padding-inline: 24px; font-size: 8px; } .preloader-landing main { padding-inline: 24px; } .preloader-landing footer > span:last-child { display: none; } }
+@media(max-height:500px) { .preloader-lab-controls { padding: 10px 20px; } .preloader-landing header { display: none; } .preloader-landing main { padding-top: 65px; } .preloader-landing h1 { font-size: 32px; margin: 10px 0; } .preloader-landing main > a { margin-top: 8px; } .preloader-landing footer { display: none; } }

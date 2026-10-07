@@ -1,0 +1,55 @@
+.lanyard { position: relative; width: 100%; height: 600px; overflow: hidden; isolation: isolate; }
+.lanyard > div:has(canvas) { position: absolute !important; inset: 0; }
+.lanyard-hit { position: absolute; inset: 0; width: 100%; height: 100%; padding: 0; border: 0; background: transparent; touch-action: none; cursor: grab; }
+.lanyard-hit:focus-visible:not([data-pointer='true']) { outline: 0; background: rgb(215 233 185 / .10); }
+.lanyard-hit:disabled { pointer-events: none; }
+.lanyard-sr-only { position: absolute; width: 1px; height: 1px; padding: 0; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.lanyard-demo { min-height: 100svh; background: #0b0b0b; color: #eeeee8; font-family: Arial, sans-serif; position: relative; overflow: hidden; }
+.lanyard-demo-header { position: relative; z-index: 2; display: flex; justify-content: space-between; gap: 24px; padding: 32px 36px 0; pointer-events: none; }
+.lanyard-eyebrow { font: 10px/1.4 monospace; letter-spacing: 1.7px; color: #9c9c90; }
+.lanyard-demo h1 { font-size: clamp(28px, 4vw, 42px); letter-spacing: -1.5px; font-weight: 500; line-height: 1.1; margin: 13px 0 9px; }
+.lanyard-demo-header p { font-size: 12px; color: #9c9c90; margin: 0; }
+.lanyard-demo-actions { display: flex; align-items: start; gap: 8px; pointer-events: auto; }
+.lanyard-demo-actions button, .lanyard-settings summary { background: #181818; border: 1px solid #33332f; border-radius: 24px; color: #eeeee8; padding: 12px 16px; min-height: 44px; font: 11px/18px Arial, sans-serif; white-space: nowrap; cursor: pointer; }
+.lanyard-demo-actions button:hover, .lanyard-settings summary:hover { background: #272722; }
+.lanyard-demo-actions button span, .lanyard-settings summary span { margin-left: 12px; }
+.lanyard-demo :is(button, summary, input):focus-visible { outline: 2px solid #d4e7a6; outline-offset: 4px; }
+.lanyard-demo .lanyard-hit:focus-visible { outline: 0; }
+.lanyard-settings { position: relative; }
+.lanyard-settings summary { list-style: none; }
+.lanyard-settings summary::-webkit-details-marker { display: none; }
+.lanyard-settings-panel { position: absolute; right: 0; top: 55px; width: 280px; max-height: calc(100svh - 110px); overflow-y: auto; overscroll-behavior: contain; padding: 20px; background: #191918; border: 1px solid #3a3a33; border-radius: 14px; box-shadow: 0 20px 60px #0008; }
+.lanyard-settings-panel .lanyard-settings-title { color: #eeeee8; font-size: 17px; margin: 0 0 20px; }
+.lanyard-settings-panel label { display: flex; align-items: center; justify-content: space-between; gap: 14px; margin: 13px 0; font-size: 12px; color: #ccc; }
+.lanyard-settings-panel input[type=color] { width: 46px; height: 36px; padding: 3px; background: #222; border: 1px solid #555; border-radius: 6px; cursor: pointer; }
+.lanyard-settings-panel .lanyard-checkbox { justify-content: start; min-height: 36px; }
+.lanyard-settings-panel input[type=checkbox] { width: 20px; height: 20px; accent-color: #d4e7a6; }
+.lanyard-settings-panel .lanyard-gravity { flex-wrap: wrap; }
+.lanyard-gravity input { width: 100%; min-height: 30px; accent-color: #d4e7a6; }
+.lanyard-settings-panel .lanyard-upload { display: block; margin-top: 20px; }
+.lanyard-upload input { display: block; margin-top: 9px; max-width: 100%; font-size: 11px; }
+.lanyard-upload input::file-selector-button { padding: 8px; background: #30302c; color: #eee; border: 1px solid #53534b; border-radius: 5px; cursor: pointer; }
+.lanyard-settings-panel p { line-height: 1.6; font-size: 11px; }
+.lanyard-tilt-controls { border-block: 1px solid #3a3a33; padding-block: 18px; margin-block: 20px; }
+.lanyard-tilt-controls .lanyard-settings-title { margin-bottom: 12px; }
+.lanyard-tilt-buttons { display: flex; flex-wrap: wrap; gap: 8px; }
+.lanyard-tilt-buttons button:disabled { opacity: .45; cursor: default; }
+.lanyard-demo > .lanyard { height: max(510px, calc(100svh - 150px)); margin-top: -90px; }
+.lanyard-demo-footer { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 22px 36px 28px; color: #9c9c90; font: 9px/1.5 monospace; letter-spacing: 1px; }
+.lanyard-demo-footer > span { display: flex; align-items: center; gap: 8px; white-space: nowrap; }
+.lanyard-dot { width: 5px; height: 5px; border-radius: 50%; background: #d4e7a6; }
+.lanyard-demo-footer p { font: 11px/1.5 Arial,sans-serif; letter-spacing: 0; margin: 0; }
+.lanyard-fallback { height: 100%; display: flex; align-items: center; flex-direction: column; color: #ddd; }
+.lanyard-fallback-strap { height: 23%; width: 20px; background: #222; }
+.lanyard-fallback-ring { width: 42px; height: 34px; border: 4px solid #666; border-radius: 14px; margin-bottom: 12px; }
+.lanyard-fallback-card { width: min(220px, 58%); aspect-ratio: 2 / 3; border: 1px solid #444; border-radius: 14px; overflow: hidden; display: grid; place-items: center; }
+.lanyard-fallback-card img { width: 100%; height: 100%; object-fit: cover; }
+.lanyard-fallback p { color: #aaa; font-size: 11px; padding: 0 18px; text-align: center; }
+@media(max-width: 600px) {
+  .lanyard-demo-header { padding: 24px 20px 0; flex-direction: column; gap: 18px; }
+  .lanyard-demo-actions { align-self: end; }
+  .lanyard-demo > .lanyard { margin-top: 0; height: max(440px, calc(100svh - 280px)); }
+  .lanyard-settings-panel { width: min(300px, calc(100vw - 40px)); max-height: calc(100svh - 200px); }
+  .lanyard-demo-footer { padding: 12px 20px 26px; flex-wrap: wrap; }
+  .lanyard-demo-footer > span:last-child { display: none; }
+}

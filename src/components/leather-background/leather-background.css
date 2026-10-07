@@ -1,0 +1,71 @@
+.leather-background {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  min-height: 100svh;
+  --leather-base: #d3c8ba;
+  --leather-tile: 480px;
+  color: #171220;
+  background: var(--leather-base);
+}
+
+.leather-background[data-finish='dark'] {
+  --leather-base: #171220;
+  --leather-tile: 560px;
+  color: #f4efe6;
+}
+
+.leather-background__material {
+  position: absolute;
+  inset: 0;
+  isolation: isolate;
+  overflow: hidden;
+  pointer-events: none;
+  background: var(--leather-base);
+}
+
+.leather-background__grain,
+.leather-background__light { position: absolute; inset: 0; pointer-events: none; }
+
+.leather-background__grain {
+  background-image: url('/assets/leather-background/pebble.webp');
+  background-size: var(--leather-tile) var(--leather-tile);
+  background-repeat: repeat;
+  background-position: 0 0;
+  mix-blend-mode: screen;
+}
+
+.leather-background__light {
+  background: url('/assets/leather-background/cream-light.webp') center / cover no-repeat;
+  mix-blend-mode: soft-light;
+}
+
+.leather-background[data-finish='dark'] .leather-background__grain {
+  background-image: url('/assets/leather-background/leather.webp');
+  mix-blend-mode: overlay;
+}
+
+.leather-background[data-finish='dark'] .leather-background__light {
+  inset-inline: -7%;
+  background-image: url('/assets/leather-background/dark-light.webp');
+  opacity: 0.9;
+}
+
+.leather-background__content { position: relative; z-index: 1; }
+
+.leather-background__filters { position: absolute; pointer-events: none; }
+.leather-background[data-palette='custom'] .leather-background__grain { mix-blend-mode: normal; }
+/* A small amount of source detail remains even when both chosen colors match. */
+.leather-background[data-palette='custom'] .leather-background__relief { opacity: 0.12; }
+
+@media (max-width: 767px), (max-width: 900px) and (pointer: coarse) {
+  .leather-background { --leather-tile: 340px; }
+  .leather-background[data-finish='dark'] { --leather-tile: 340px; }
+  .leather-background__light { background-image: url('/assets/leather-background/cream-light-mobile.webp'); }
+  .leather-background[data-finish='dark'] .leather-background__material { inset-block: -10%; }
+  .leather-background[data-finish='dark'] .leather-background__light { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce), (pointer: coarse) {
+  .leather-background__light { transform: none !important; }
+}

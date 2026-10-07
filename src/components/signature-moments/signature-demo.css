@@ -1,0 +1,7 @@
+.signature-demo { background: #171220; color: #f4efe6; }
+.signature-demo-end { min-height: 100svh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 70px 24px; background: #0b0a0f; }
+.signature-demo-end > span { font: 10px/1.5 monospace; letter-spacing: .15em; color: #b0a89d; }
+.signature-demo-end h2 { font: 400 clamp(32px,5vw,64px)/1.1 Arial,sans-serif; letter-spacing: -.04em; margin: 26px 0 12px; }
+.signature-demo-end em { font-family: Georgia,serif; }
+.signature-demo-end p { font: 12px/1.7 Arial,sans-serif; color: #b0a89d; }
+.signature-demo-end a { margin-top: 24px; font: 11px/1.5 monospace; text-decoration: none; padding: 14px 20px; border: 1px solid #f4efe650; border-radius: 24px; }
