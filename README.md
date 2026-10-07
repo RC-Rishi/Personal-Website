@@ -2,7 +2,7 @@
 
 A local workspace for collecting reference-inspired components before assembling a personal website. Its styling is a temporary lab theme.
 
-[Open the live component lab](https://personal-website-peach-omega-49.vercel.app)
+[Open the live component lab](https://rishi-component-lab.vercel.app)
 
 ## Collected components
 

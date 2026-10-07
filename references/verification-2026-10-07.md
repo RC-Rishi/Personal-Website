@@ -9,3 +9,8 @@
 - Production-build smoke checks passed for all five standalone components on desktop and mobile, including actual time-advancing playback of the replacement fifth-card clip. No runtime errors or HTTP failure responses were observed.
 - Inspected desktop/mobile gallery, card-field, and replacement-video screenshots. Evidence is stored locally in ignored `artifacts/publishing/` and `artifacts/signature-validation/`; the smoke report is `artifacts/publishing/smoke.json`.
 - Public GitHub repository: https://github.com/RC-Rishi/Personal-Website. Vercel production address: https://personal-website-peach-omega-49.vercel.app. The production deployment contains 118 source files after CLI exclusions, compared with 432 in the initial upload. The initial deployment was removed after the clean replacement became ready.
+
+## GitHub integration and shorter address
+
+- Confirmed the Vercel project is connected to `RC-Rishi/Personal-Website`, with `main` as its production branch.
+- Added https://rishi-component-lab.vercel.app as a verified project domain for production deployments and updated the README's live demo link. The initial address remains available.
