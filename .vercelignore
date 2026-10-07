@@ -1,0 +1,12 @@
+.git/
+.vercel/
+.env
+.env.*
+node_modules/
+dist/
+/assets/
+artifacts/
+playwright-report/
+test-results/
+.playwright-mcp/
+*.tsbuildinfo

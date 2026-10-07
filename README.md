@@ -57,4 +57,6 @@ Push the project to your GitHub repository, then import that repository at https
 
 Required component files under `public/assets/` are included in Git. Only the root `/assets/` reference folder is ignored, along with local reports, dependencies, build output, and `.vercel/` account/project metadata.
 
+`.vercelignore` also excludes those local-only folders and environment files from CLI uploads. For a manual production update, run `npx vercel deploy --prod` after signing in and linking the project.
+
 The fifth Signature Moments card uses a copy of the smaller second-card clip as a demo placeholder. Reference media provenance is documented in `public/assets/signature-moments/SOURCES.md`; replace demo reference artwork and clips with your own content when assembling the final personal website.
