@@ -68,6 +68,6 @@ The optional video ratio is used while metadata loads, then updated to the actua
 
 ## Demo and evidence
 
-Open `/?component=signature-moments` or choose **Signature Moments** in the lab. Original five cards and 480p clips are local, with source records in `public/assets/signature-moments/SOURCES.md`. Total clip storage is about 119 MB; opening a card downloads only that clip via browser media requests.
+Open `/?component=signature-moments` or choose **Signature Moments** in the lab. Five cards and locally hosted 480p demo clips have source records in `public/assets/signature-moments/SOURCES.md`. The fifth card repeats the smaller second-card clip as a demo placeholder. Total clip storage is about 52 MiB across five files; opening a card downloads only that clip via browser media requests.
 
 Reference observations and differences: `references/jjettas-signature-moments.md`. Behavioral tests: `tests/signature-moments.spec.ts`. A separate fixture verifies custom content and the API outside the lab. Captures live in ignored `artifacts/signature-validation/` and `artifacts/references/signature-moments/`.
